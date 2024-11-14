@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material";
 import classNames from "classnames";
-import React from "react";
 
 export default function Footer() {
   return (
