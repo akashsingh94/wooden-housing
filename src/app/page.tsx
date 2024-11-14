@@ -1,5 +1,10 @@
 import Hero from "@/components/hero/Hero";
+import ProjectFeatures from "@/components/home-project/ProjectFeatures";
 import { Breadcrumbs, Link, Typography } from "@mui/material";
+import Image from "next/image";
+import ArrowRight from "../../public/icons/arrow-right-primary.svg";
+import ProjectImageSlider from "@/components/home-project/ProjectImageSlider";
+import ProjectDetails from "@/components/home-project/ProjectDetails";
 
 export default function Home() {
   const breadcrumbs = [
@@ -31,15 +36,19 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <div className="tw--flex tw--justify-center">
-        <div className="container">
+      <div className="tw--flex tw--justify-center tw--mt-1">
+        <div className="container tw--flex tw--flex-col tw--gap-8">
           <Breadcrumbs
-            classes={{ separator: "tw--text-primary tw--text-2xl" }}
-            separator="›"
+            separator={<Image src={ArrowRight} alt="" />}
             aria-label="breadcrumb"
           >
             {breadcrumbs}
           </Breadcrumbs>
+          <ProjectFeatures />
+          <div className="tw--pt-6 tw--flex tw--gap-8">
+            <ProjectImageSlider className="tw--flex-1" />
+            <ProjectDetails className="tw--flex-1 tw--max-w-[435px]" />
+          </div>
         </div>
       </div>
     </div>
