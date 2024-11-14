@@ -45,7 +45,7 @@ export default function Home() {
             {breadcrumbs}
           </Breadcrumbs>
           <ProjectFeatures />
-          <div className="tw--pt-6 tw--flex tw--gap-8">
+          <div className="tw--pt-6 tw--flex tw--gap-8 tw--flex-col xl:tw--flex-row">
             <ProjectImageSlider className="tw--flex-1" />
             <ProjectDetails className="tw--flex-1 tw--max-w-[435px]" />
           </div>
