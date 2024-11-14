@@ -2,8 +2,6 @@ import classNames from "classnames";
 
 import SectionTitle from "../display/SectionTitle";
 import "./ProjectImageSlider.scss";
-import Image from "next/image";
-import Image1 from "../../../public/images/img.webp";
 
 type Props = {
   className?: string;
@@ -43,7 +41,6 @@ export default function ProjectImageSlider(props: Readonly<Props>) {
             className={classNames(
               "thumbnail",
               "tw--border-[3px] tw--h-32 tw--rounded-lg",
-
               "tw--flex tw--items-center tw--justify-center"
             )}
           >
@@ -51,9 +48,6 @@ export default function ProjectImageSlider(props: Readonly<Props>) {
               View More (7)
             </span>
           </div>
-          {/* <Image src={Image1} alt="" />
-          <Image src={Image1} alt="" />
-          <Image src={Image1} alt="" /> */}
         </div>
       </div>
     </div>

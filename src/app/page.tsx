@@ -1,10 +1,12 @@
-import Hero from "@/components/hero/Hero";
 import ProjectFeatures from "@/components/home-project/ProjectFeatures";
 import { Breadcrumbs, Link, Typography } from "@mui/material";
+import classNames from "classnames";
 import Image from "next/image";
-import ArrowRight from "../../public/icons/arrow-right-primary.svg";
+
+import Hero from "@/components/hero/Hero";
 import ProjectImageSlider from "@/components/home-project/ProjectImageSlider";
 import ProjectDetails from "@/components/home-project/ProjectDetails";
+import ArrowRight from "../../public/icons/arrow-right-primary.svg";
 
 export default function Home() {
   const breadcrumbs = [
@@ -45,7 +47,12 @@ export default function Home() {
             {breadcrumbs}
           </Breadcrumbs>
           <ProjectFeatures />
-          <div className="tw--pt-6 tw--flex tw--gap-8 tw--flex-col tw--justify-center xl:tw--flex-row">
+          <div
+            className={classNames(
+              "tw--pt-6 tw--flex  tw--gap-20 tw--flex-col tw--justify-center",
+              "lg:tw--gap-8 lg:tw--flex-row"
+            )}
+          >
             <ProjectImageSlider className="tw--flex-1 xl:tw--max-w-[762px] xl:tw--max-h-[500px]" />
             <ProjectDetails className="tw--flex-1 xl:tw--max-w-[435px]" />
           </div>
