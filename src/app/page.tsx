@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <div className="tw--flex tw--justify-center tw--mt-1">
+      <div className="tw--flex tw--justify-center tw--mt-1 tw--px-4">
         <div className="container tw--flex tw--flex-col tw--gap-8">
           <Breadcrumbs
             separator={<Image src={ArrowRight} alt="" />}
@@ -45,9 +45,9 @@ export default function Home() {
             {breadcrumbs}
           </Breadcrumbs>
           <ProjectFeatures />
-          <div className="tw--pt-6 tw--flex tw--gap-8 tw--flex-col xl:tw--flex-row">
-            <ProjectImageSlider className="tw--flex-1" />
-            <ProjectDetails className="tw--flex-1 tw--max-w-[435px]" />
+          <div className="tw--pt-6 tw--flex tw--gap-8 tw--flex-col tw--justify-center xl:tw--flex-row">
+            <ProjectImageSlider className="tw--flex-1 xl:tw--max-w-[762px] xl:tw--max-h-[500px]" />
+            <ProjectDetails className="tw--flex-1 xl:tw--max-w-[435px]" />
           </div>
         </div>
       </div>
