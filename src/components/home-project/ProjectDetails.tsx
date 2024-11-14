@@ -88,7 +88,7 @@ export default function ProjectDetails(props: Readonly<Props>) {
               })}
             >
               <ListItemIcon>
-                <Component sx={{ fontSize: 38 }} />
+                <Component sx={{ fontSize: 35 }} />
               </ListItemIcon>
               <ListItemText
                 className="tw--text-[#313131]"
