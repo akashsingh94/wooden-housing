@@ -8,14 +8,13 @@ import FireResistance from "../../../public/icons/fire-resistance.svg";
 import SoundResistance from "../../../public/icons/sound-resistance.svg";
 import CircleBlack from "../../../public/icons/circle-black.svg";
 import CircleCurly from "../../../public/icons/circle-curly.svg";
-import "./ProjectFeatures.scss";
 
 export default function ProjectFeatures() {
   return (
     <div
       className={classNames(
         "component--project-feature",
-        "tw--size-full tw--grid tw--gap-1"
+        "tw--size-full tw--grid tw--gap-1 tw--grid-cols-5"
       )}
     >
       {/* Earthquake Resistance */}

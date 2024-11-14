@@ -13,16 +13,13 @@ export default function Header() {
       <div
         className={classNames(
           "component--header",
-          "tw--h-[85px] tw--grid tw--items-center tw--gap-10",
-          "tw--border-b tw--border-solid tw--px-2 sm:tw--px-16 xl:tw--pr-16 xl:tw--pl-4"
+          "tw--h-[85px] tw--flex tw--items-center tw--gap-28 tw--justify-between",
+          "tw--border-b tw--border-solid tw--p-4",
+          "xl:tw--gap-56 xl:tw--justify-center xl:tw--px-2"
         )}
       >
         {/* Header left */}
-        <div
-          className={classNames(
-            "tw--flex tw--items-center tw--flex-1 tw--gap-28 xl:tw--justify-center"
-          )}
-        >
+        <div className={classNames("tw--flex tw--items-center tw--gap-28")}>
           {/* Logo and company name */}
           <div className="tw--flex tw--gap-4 tw--items-center">
             <Image src={Logo} alt="" />
@@ -88,7 +85,7 @@ export default function Header() {
             "tw--items-center tw--justify-center  tw--hidden xl:tw--flex"
           )}
         >
-          <div className="tw--w-[1110px] tw--flex tw--items-center tw--gap-[40px]">
+          <div className="tw--w-[1245px] tw--flex tw--items-center tw--gap-[40px] tw--px-2">
             <div className="tw--text-arsenic tw--text-lg tw--break-words">
               Why wooden house?
             </div>
