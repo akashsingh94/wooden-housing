@@ -22,15 +22,20 @@ export default function ProjectFloorPlan(props: Readonly<Props>) {
         )}
       >
         <div className="tw--flex tw--items-center">
-          <Image src={LineLeft} alt="" />
+          <div className="tw--flex-1">
+            <Image src={LineLeft} alt="" />
+          </div>
           <Typography
             className={classNames(
-              "tw--text-secondary-darker tw--text-3xl tw--font-semibold"
+              "tw--text-secondary-darker tw--text-3xl tw--font-semibold",
+              "tw--max-w-max"
             )}
           >
             Floor Plan
           </Typography>
-          <Image src={LineRight} alt="" />
+          <div className="tw--flex-1">
+            <Image src={LineRight} alt="" />
+          </div>
         </div>
         <Typography
           className={classNames(
@@ -56,15 +61,6 @@ export default function ProjectFloorPlan(props: Readonly<Props>) {
               floorNumber={ind + 1}
               totalArea={floor.area}
               className="tw--size-full tw--mt-8"
-              // className={classNames(
-              //   "tw--flex tw--flex-col tw--size-full tw--gap-8",
-              //   {
-              //     "xl:tw--flex-row": !isEven,
-              //   },
-              //   {
-              //     "xl:tw--flex-row-reverse": isEven,
-              //   }
-              // )}
             />
           );
         })}
