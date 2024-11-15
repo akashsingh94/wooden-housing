@@ -16,60 +16,76 @@ import Deck from "../svg-icons/Deck";
 import Toilet from "../svg-icons/Toilet";
 import Kitchen from "../svg-icons/Kitchen";
 import Construction from "../svg-icons/Construction";
+import { ProjectDetails as Details } from "@/typings/services";
 
 type Props = {
   className?: string;
+  details: Details;
 };
 
-const details = [
+const detailsMapping = [
   {
-    name: "Total Area",
+    displayName: "Total Area",
     icon: TotalArea,
+    name: "totalArea", //serverName
+    isArea: true,
   },
   {
-    name: "Carpet Area",
+    displayName: "Carpet Area",
     icon: CarpetArea,
+    name: "carpetArea",
+    isArea: true,
   },
   {
-    name: "No. of floors",
+    displayName: "No. of floors",
     icon: NumberOfFloors,
+    name: "floors",
   },
   {
-    name: "Price - /sqft",
+    displayName: "Price - /sqft",
     icon: Price,
+    name: "priceSqft",
+    isPrice: true,
   },
   {
-    name: "No. of bedrooms",
+    displayName: "No. of bedrooms",
     icon: Bed,
+    name: "bedrooms",
   },
   {
-    name: "No. of living room",
+    displayName: "No. of living room",
     icon: Living,
+    name: "livingRoom",
   },
   {
-    name: "No. of hall",
+    displayName: "No. of hall",
     icon: Living,
+    name: "halls",
   },
   {
-    name: "No. of Deck",
+    displayName: "No. of Deck",
     icon: Deck,
+    name: "decks",
   },
   {
-    name: "No. of Toilet",
+    displayName: "No. of Toilet",
     icon: Toilet,
+    name: "toilets",
   },
   {
-    name: "No. of kitchen",
+    displayName: "No. of kitchen",
     icon: Kitchen,
+    name: "kitchens",
   },
   {
-    name: "Type of construction",
+    displayName: "Type of construction",
     icon: Construction,
+    name: "typeOfConstruction",
   },
 ];
 
 export default function ProjectDetails(props: Readonly<Props>) {
-  const { className } = props;
+  const { className, details } = props;
   return (
     <div className={classNames("component--project-details", className)}>
       <SectionTitle title="Project Details" />
@@ -79,26 +95,33 @@ export default function ProjectDetails(props: Readonly<Props>) {
         dense
         disablePadding
       >
-        {details.map(({ icon: Component, name }, ind) => {
-          return (
-            <ListItem
-              key={name}
-              className={classNames("tw--py-2", {
-                "tw--bg-[#FBFBFB]": (ind + 1) % 2 === 0,
-              })}
-            >
-              <ListItemIcon>
-                <Component sx={{ fontSize: 35 }} />
-              </ListItemIcon>
-              <ListItemText
-                className="tw--text-[#313131]"
-                id="switch-list-label-wifi"
-                primary={name}
-              />
-              <Typography className="tw--font-medium">40*50 sqft</Typography>
-            </ListItem>
-          );
-        })}
+        {detailsMapping.map(
+          ({ icon: Component, displayName, name, isArea, isPrice }, ind) => {
+            let value = details[name as keyof typeof details];
+            if (!value) return null;
+            value = Array.isArray(value) ? value.length : value;
+            if (isArea) value = `${value} sqft`;
+            if (isPrice) value = `Rs. ${value}`;
+            return (
+              <ListItem
+                key={displayName}
+                className={classNames("tw--py-2", {
+                  "tw--bg-[#FBFBFB]": (ind + 1) % 2 === 0,
+                })}
+              >
+                <ListItemIcon>
+                  <Component sx={{ fontSize: 35 }} />
+                </ListItemIcon>
+                <ListItemText
+                  className="tw--text-[#313131]"
+                  id="switch-list-label-wifi"
+                  primary={displayName}
+                />
+                <Typography className="tw--font-medium">{value}</Typography>
+              </ListItem>
+            );
+          }
+        )}
       </List>
     </div>
   );

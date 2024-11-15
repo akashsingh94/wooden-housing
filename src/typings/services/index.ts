@@ -1,0 +1,64 @@
+export type Service = {
+  id: string;
+  gallery: string[];
+  frontendIdentifier: string;
+  category: string;
+  projectDetails: ProjectDetails;
+  gallery3d: string[];
+  sequence: number;
+  img: string;
+  hidden: boolean;
+  models3d: string[];
+  video: string;
+  description: string;
+  title: string;
+};
+
+export type ProjectDetails = {
+  decks: number;
+  totalArea: number;
+  kitchens: number;
+  halls: number;
+  carpetArea: number;
+  floors: Floor[];
+  bhk: number;
+  noOfFloors: number;
+  bedrooms: number;
+  warrantyYears: number;
+  priceSqft: string;
+  typeOfConstruction: string;
+  livingRoom: number;
+  toilets: number;
+};
+
+export type Floor = {
+  kitchen: boolean;
+  technicalRoom: boolean;
+  storageRoom: boolean;
+  kitchenWardrobe: boolean;
+  diningArea: boolean;
+  doubleBedroom: boolean;
+  floorElevation: string;
+  washbasinCabinet: boolean;
+  studyTable: boolean;
+  tvUnit: boolean;
+  livingArea: boolean;
+  miniBar: boolean;
+  openArea: boolean;
+  deck: boolean;
+  store: boolean;
+  floorPlanName: string;
+  floorElevationName: string;
+  area: number;
+  washArea: boolean;
+  luggageRack: boolean;
+  bathroomLaundryRoom: boolean;
+  floorPlan: string;
+  description: string;
+  livingRoom: boolean;
+  fixedWardrobes: boolean;
+  toilet: boolean;
+  stair: boolean;
+  lounge: boolean;
+  hall: boolean;
+};
