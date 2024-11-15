@@ -4,13 +4,16 @@ import classNames from "classnames";
 
 import LineLeft from "../../../public/icons/line-left.svg";
 import LineRight from "../../../public/icons/line-right.svg";
+import { Floor } from "@/typings/services";
+import ProjectFloorPlanDetails from "./ProjectFloorPlanDetails";
 
 type Props = {
   className?: string;
+  floors: Floor[];
 };
 
 export default function ProjectFloorPlan(props: Readonly<Props>) {
-  const { className } = props;
+  const { className, floors } = props;
   return (
     <div className={classNames("component--project-floor-plan", className)}>
       <div
@@ -37,6 +40,34 @@ export default function ProjectFloorPlan(props: Readonly<Props>) {
         >
           Take a look at the floor plan of Wooden Cottage Model
         </Typography>
+        {floors.map((floor, ind) => {
+          const features = Object.keys(floor).reduce((feature, key) => {
+            const value = floor[key as keyof typeof floor];
+            if (typeof value === "boolean" && value)
+              feature = [...feature, key];
+            return feature;
+          }, [] as string[]);
+          return (
+            <ProjectFloorPlanDetails
+              key={`${floor.description}-${ind}`}
+              availableFeatures={features}
+              floorElevationSrc={floor.floorElevation}
+              floorPlanSrc={floor.floorPlan}
+              floorNumber={ind + 1}
+              totalArea={floor.area}
+              className="tw--size-full tw--mt-8"
+              // className={classNames(
+              //   "tw--flex tw--flex-col tw--size-full tw--gap-8",
+              //   {
+              //     "xl:tw--flex-row": !isEven,
+              //   },
+              //   {
+              //     "xl:tw--flex-row-reverse": isEven,
+              //   }
+              // )}
+            />
+          );
+        })}
       </div>
     </div>
   );

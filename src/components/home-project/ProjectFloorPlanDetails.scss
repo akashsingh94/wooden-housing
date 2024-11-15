@@ -1,0 +1,7 @@
+.component--project-floor-plan-details {
+  @media (min-width: 1024px) {
+    .floor-plan-and-details {
+      grid-template-columns: 1fr 510px;
+    }
+  }
+}

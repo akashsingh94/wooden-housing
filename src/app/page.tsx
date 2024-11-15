@@ -73,7 +73,7 @@ export default async function Home() {
             />
             <div
               className={classNames(
-                "tw--pt-6 tw--flex  tw--gap-20 tw--flex-col tw--justify-center",
+                "tw--pt-6 tw--flex tw--gap-20 tw--flex-col tw--justify-center",
                 "lg:tw--gap-8 lg:tw--flex-row"
               )}
             >
@@ -86,7 +86,10 @@ export default async function Home() {
                 className="tw--flex-1 xl:tw--max-w-[435px]"
               />
             </div>
-            <ProjectFloorPlan className="tw--pt-6" />
+            <ProjectFloorPlan
+              floors={currentProject.projectDetails.floors}
+              className="tw--pt-6"
+            />
           </div>
         </div>
       ) : (
