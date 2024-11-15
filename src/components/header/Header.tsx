@@ -19,7 +19,7 @@ export default function Header() {
         )}
       >
         {/* Header left */}
-        <div className={classNames("tw--flex tw--items-center tw--gap-28")}>
+        <div className={classNames("tw--flex tw--items-center tw--gap-32")}>
           {/* Logo and company name */}
           <div className="tw--flex tw--gap-4 tw--items-center">
             <Image src={Logo} alt="" />
@@ -61,22 +61,17 @@ export default function Header() {
         </div>
 
         {/* header right */}
-        <>
-          <Button
-            sx={{ textTransform: "none", fontSize: "18px" }}
-            disableElevation
-            variant="contained"
-            className="tw--hidden xl:tw--flex"
-          >
-            Contact Us
-          </Button>
-          <IconButton
-            className="xl:tw--hidden tw--inline-flex"
-            aria-label="menu"
-          >
-            <Burger />
-          </IconButton>
-        </>
+        <Button
+          sx={{ textTransform: "none", fontSize: "18px" }}
+          disableElevation
+          variant="contained"
+          className="tw--hidden xl:tw--flex"
+        >
+          Contact Us
+        </Button>
+        <IconButton className="xl:tw--hidden tw--inline-flex" aria-label="menu">
+          <Burger />
+        </IconButton>
       </div>
       <div className="sub-header tw--grid">
         <div
@@ -85,7 +80,7 @@ export default function Header() {
             "tw--items-center tw--justify-center  tw--hidden xl:tw--flex"
           )}
         >
-          <div className="tw--w-[1245px] tw--flex tw--items-center tw--gap-[40px] tw--px-2">
+          <div className="tw--w-[1260px] tw--flex tw--items-center tw--gap-[40px] tw--px-2">
             <div className="tw--text-arsenic tw--text-lg tw--break-words">
               Why wooden house?
             </div>
