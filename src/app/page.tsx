@@ -84,7 +84,9 @@ export default async function Home() {
           </div>
         </div>
       ) : (
-        <Typography>No details found</Typography>
+        <Typography className="tw--py-5 tw--flex tw--items-center tw--justify-center">
+          No details found
+        </Typography>
       )}
     </div>
   );
