@@ -54,7 +54,10 @@ export default async function Home() {
 
   return (
     <div>
-      <Hero />
+      <Hero
+        title={currentProject?.title ?? ""}
+        descriptions={currentProject?.description ?? ""}
+      />
       {currentProject ? (
         <div className="tw--flex tw--justify-center tw--mt-1 tw--px-4">
           <div className="container tw--flex tw--flex-col tw--gap-8">

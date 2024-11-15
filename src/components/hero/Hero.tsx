@@ -2,9 +2,16 @@ import classNames from "classnames";
 
 import "./Hero.scss";
 
-export default function Hero() {
+type Props = {
+  title: string;
+  descriptions: string;
+  className?: string;
+};
+
+export default function Hero(props: Readonly<Props>) {
+  const { className, descriptions, title } = props;
   return (
-    <div className="tw--h-[636px]">
+    <div className={classNames("component--hero", "tw--h-[636px]", className)}>
       <div className="big-image tw--size-full">
         <div className="tw--flex tw--items-center tw--justify-center tw--size-full">
           <div
@@ -21,10 +28,10 @@ export default function Hero() {
               )}
             >
               <div className="tw--text-white tw--text-2xl sm:tw--text-[2.63rem] tw--font-semibold">
-                Glass House 70 - Log Cabin
+                {descriptions}
               </div>
               <div className="tw--text-[#FF6847] tw--text-xl sm:tw--text-3xl tw--font-semibold">
-                Wooden Cottage
+                {title}
               </div>
             </div>
           </div>
