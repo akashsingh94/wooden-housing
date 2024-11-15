@@ -36,7 +36,11 @@ export default function ProjectFloorPlanDetails(props: Props) {
   // const isEvenFloor = (floorNumber + 1) % 2 === 0;
   return (
     <div
-      className={classNames("component--project-floor-plan-details", className)}
+      className={classNames(
+        "component--project-floor-plan-details",
+        "tw--flex tw--flex-col tw--gap-16",
+        className
+      )}
     >
       <div
         className={classNames(
@@ -80,9 +84,22 @@ export default function ProjectFloorPlanDetails(props: Props) {
           </List>
         </div>
       </div>
-      <div className="tw--relative tw--flex tw--items-center tw--justify-center">
+      <div
+        className={classNames(
+          "tw--relative tw--flex tw--items-center tw--justify-center",
+          "lg:tw--h-[600px]"
+        )}
+      >
         <BackgroundImage src={BgGrid} alt="" />
-        <Image src={floorElevationSrc} alt="" height={400} width={900} />
+        <div className="tw--relative">
+          <Image
+            className="tw--relative"
+            src={floorElevationSrc}
+            alt=""
+            height={385}
+            width={900}
+          />
+        </div>
       </div>
     </div>
   );
