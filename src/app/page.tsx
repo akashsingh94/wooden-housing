@@ -7,6 +7,7 @@ import Hero from "@/components/hero/Hero";
 import ProjectImageSlider from "@/components/home-project/ProjectImageSlider";
 import ProjectDetails from "@/components/home-project/ProjectDetails";
 import ArrowRight from "../../public/icons/arrow-right-primary.svg";
+import ProjectFloorPlan from "@/components/home-project/ProjectFloorPlan";
 
 export default function Home() {
   const breadcrumbs = [
@@ -56,6 +57,7 @@ export default function Home() {
             <ProjectImageSlider className="tw--flex-1 xl:tw--max-w-[762px] xl:tw--max-h-[500px]" />
             <ProjectDetails className="tw--flex-1 xl:tw--max-w-[435px]" />
           </div>
+          <ProjectFloorPlan className="tw--pt-6" />
         </div>
       </div>
     </div>
