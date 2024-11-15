@@ -57,6 +57,7 @@ export default async function Home() {
       <Hero
         title={currentProject?.title ?? ""}
         descriptions={currentProject?.description ?? ""}
+        src={currentProject?.gallery.at(0) ?? ""}
       />
       {currentProject ? (
         <div className="tw--flex tw--justify-center tw--mt-1 tw--px-4">

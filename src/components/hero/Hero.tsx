@@ -1,19 +1,22 @@
 import classNames from "classnames";
 
 import "./Hero.scss";
+import BackgroundImage from "../display/BackgroundImage";
 
 type Props = {
   title: string;
   descriptions: string;
   className?: string;
+  src: string;
 };
 
 export default function Hero(props: Readonly<Props>) {
-  const { className, descriptions, title } = props;
+  const { className, descriptions, title, src } = props;
   return (
     <div className={classNames("component--hero", "tw--h-[636px]", className)}>
-      <div className="big-image tw--size-full">
-        <div className="tw--flex tw--items-center tw--justify-center tw--size-full">
+      <div className="tw--size-full tw--relative">
+        <BackgroundImage src={src} alt="" />
+        <div className="tw--relative tw--z-10 tw--flex tw--items-center tw--justify-center tw--size-full">
           <div
             className={classNames(
               "container",
@@ -36,7 +39,7 @@ export default function Hero(props: Readonly<Props>) {
             </div>
           </div>
         </div>
-        {/* <div className="overlay"></div> */}
+        <div className="overlay"></div>
       </div>
     </div>
   );
