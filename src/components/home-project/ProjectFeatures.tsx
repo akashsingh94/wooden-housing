@@ -9,12 +9,19 @@ import SoundResistance from "../../../public/icons/sound-resistance.svg";
 import CircleBlack from "../../../public/icons/circle-black.svg";
 import CircleCurly from "../../../public/icons/circle-curly.svg";
 
-export default function ProjectFeatures() {
+type Props = {
+  noOfYearWarranty: number;
+  className?: string;
+};
+
+export default function ProjectFeatures(props: Readonly<Props>) {
+  const { noOfYearWarranty, className } = props;
   return (
     <div
       className={classNames(
         "component--project-feature",
-        "tw--size-full tw--grid tw--gap-1 tw--grid-cols-5"
+        "tw--size-full tw--grid tw--gap-1 tw--grid-cols-5",
+        className
       )}
     >
       {/* Earthquake Resistance */}
@@ -138,11 +145,11 @@ export default function ProjectFeatures() {
                   "sm:tw--text-xl"
                 )}
               >
-                3
+                {noOfYearWarranty}
               </Typography>
               <Typography
                 className={classNames(
-                  "tw--uppercase tw--font-medium tw--text-[3px] tw--relative",
+                  "tw--uppercase tw--font-medium tw--text-[3px] tw--relative tw--top-[-4px]",
                   "sm:tw--tracking-wider sm:tw--text-[6px]"
                 )}
               >
@@ -152,7 +159,7 @@ export default function ProjectFeatures() {
           </div>
         </div>
         <Typography className="tw--text-[#232323] tw--text-xs sm:tw--text-lg tw--text-center">
-          3 Years Warranty
+          {noOfYearWarranty} Years Warranty
         </Typography>
       </div>
     </div>

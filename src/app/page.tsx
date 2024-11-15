@@ -68,7 +68,9 @@ export default async function Home() {
             >
               {breadcrumbs}
             </Breadcrumbs>
-            <ProjectFeatures />
+            <ProjectFeatures
+              noOfYearWarranty={currentProject.projectDetails.warrantyYears}
+            />
             <div
               className={classNames(
                 "tw--pt-6 tw--flex  tw--gap-20 tw--flex-col tw--justify-center",
