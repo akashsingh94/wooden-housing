@@ -33,7 +33,7 @@ export default function ProjectFloorPlanDetails(props: Props) {
     floorNumber,
     totalArea,
   } = props;
-  const isEvenFloor = (floorNumber + 1) % 2 === 0;
+  // const isEvenFloor = (floorNumber + 1) % 2 === 0;
   return (
     <div
       className={classNames("component--project-floor-plan-details", className)}
